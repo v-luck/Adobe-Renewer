@@ -4,14 +4,10 @@ import os
 import re
 import sys
 
-#os.chdir('/mnt/c/Program Files/Adobe/Adobe Illustrator CC 2018/Support Files/Contents/Windows/AMT/')
-
 input_fh = open('/mnt/c/Program Files/Adobe/Adobe Illustrator CC 2018/Support Files/Contents/Windows/AMT/application.xml', 'r')
 output_fh = open('/mnt/c/Program Files/Adobe/Adobe Illustrator CC 2018/Support Files/Contents/Windows/AMT/application_new.xml', 'w')
 
-i = 0
 for line in input_fh.readlines():
-    i += 1
     if 'TrialSerialNumber' in line:
 
         match = re.search('TrialSerialNumber">(\d+)<', line)
